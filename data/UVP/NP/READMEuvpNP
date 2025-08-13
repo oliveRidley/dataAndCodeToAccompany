@@ -1,0 +1,71 @@
+>> load mergedNP_uvp_adjustedAndBiasCorr.mat
+>> whos
+  Name              Size                  Bytes  Class      Attributes
+
+  binInfo           1x1                    2276  struct               
+  castLabs        218x1                   25556  cell                 
+  isRide          218x1                     218  logical              
+  lat             218x1                    1744  double               
+  lon             218x1                    1744  double               
+  psd             101x25x218            4403600  double               
+  psd_relunc      101x25x218            4403600  double               
+  shipStr           1x2                     222  cell                 
+  station         218x1                    1744  double               
+  t               218x1                    1744  double               
+  units             1x1                    1016  struct               
+  z               101x1                     808  double           
+             
+
+
+psd is abundance (#/l/mm)  psd(depth,size,cast)
+psd(:,:,isRide)  is the psd for Ride
+psd(:,:,~isRide) is the psd for Revelle
+
+psd_relunc is the relative uncertainty (fractional 0-1).  
+  psd_relunc is 1/sqrt(Nparticles)=1/sqrt(psd*psdBinWidth*sampleVolume)
+  as in 1/sqrt(psd(#/l/mm)*psdBinWidth(mm)*sampleVolume(l)))
+  from https://github.com/britairving/UVP_plots_basic/blob/master/UVP_calculate_PAR_fields.m
+
+station is the station number
+station(isRide) would be the Ride stations
+station(~isRide) would be the Revelle
+
+castLabs is a cell with the ship specified along with the cast.
+
+
+>> display(castLabs(12:15))
+  4×1 cell array
+
+    {'ride009'}
+    {'rev003' }
+    {'rev004' }
+    {'ride010'}
+
+binInfo is a structure with information about the size bins.
+>> binInfo
+
+binInfo = 
+
+  struct with fields:
+
+       bin_edges_vol: [25×2 double]
+      bin_edges_diam: [25×2 double]
+    bin_centers_diam: [0.0905 0.1140 0.1437 0.1810 0.2281 0.2874 0.3620 0.4561 0.5747 0.7241 0.9123 1.1494 1.4482 1.8246 … ] (1×25 double)
+          bin_widths: [0.0210 0.0264 0.0333 0.0419 0.0528 0.0665 0.0838 0.1056 0.1331 0.1677 0.2113 0.2662 0.3353 0.4225 … ] (1×25 double)
+              n_bins: 25
+               units: 'length is mm,  volume is  mm^3'
+
+
+
+
+
+this merged product was made by intercalibrating the Ride and Revelle data which was obtained from  https://ecopart.obs-vlfr.fr/
+
+RV Sally Ride SR1812
+project- uvp5_sn207_2018_exports_np_sr1812_filtered
+owner- Andrew McDonnell
+
+RV Roger Revelle RR1813
+project- uvp5_sn201_exports01_filtered 
+owner- Emmanuel Boss (emmanuel.boss@maine.edu)
+

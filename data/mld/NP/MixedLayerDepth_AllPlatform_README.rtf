@@ -1,0 +1,42 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww13480\viewh11120\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Read me file for all-platform Mixed Layer Depth data product\
+
+\b0 Andy Thompson (andrewt@caltech.edu)\
+Last updated:  July 17, 2020
+\b \
+\
+
+\b0 The mixed layer data product \'93MLD_all.mat\'94 provides calculations of mixed layer depth for key platforms during the EXPORTS 2018 North Pacific field program.  The default criterion for mixed layer depth is the depth at which the density difference, compared to the density at 5 m, exceeds 0.1 kg/m^3.  This choice was selected in order to pick out the strong thermocline at the mixed layer base, as opposed to shorter term stratification events due to surface forcing.  Please contact Andy Thompson (andrewt@caltech.edu) if you have interest in other MLD criteria.\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 It was not possible to use the 5 m density value for all of the profiles due to occasional poor data at these shallow depths.  This was particularly true for the SIO rosette on the Revelle.  For these cases, each profile was inspected manually and the shallowest possible depth below 5 m was selected as the reference density.  This did not appear to significantly impact MLD calculations. \
+\
+The final data set contains 2,198 measures of the mixed layer depth, the earliest on the 25 July, 2018, the latest on 12 March, 2019.  The submitted data product is a Matlab structure that contains the following vectors:\
+\
+MLD:  mixed layer depth (m)\
+Lon:  longitude (\'b0E)\
+Lat:  latitude (\'b0N)\
+Yearday:  date in days since January 1, 2018 (zero-based); all dates are UTC\
+Datenum:  Matlab datenumber; all dates are UTC\
+Platform:  integer value that identifies the platform from which the MLD was calculated\
+Platform_ID:  strings that provide provide the key for platform ID\'92s\
+\
+The platforms included in this data product (along with their integer ID\'92s) are:\
+\
+1 = Sally Ride rosette\
+2 = Roger Revelle rosette\
+3 = Roger Revelle tracer metal CTD\
+4 = Roger Revelle MOCNESS\
+5 = Seaglider\
+6 = Wirewalker, Epoch 2 deployment\
+7 = Wirewalker, Epoch 3 deployment\
+8 = Lagrangian float\
+9 = Argo float 0948\
+10 = Argo float 0949}
