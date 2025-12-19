@@ -62,7 +62,7 @@ ylabel(ylab);
 xlabel(xlab);
 text(1.25,950,sprintf('A=%4.2f B=%4.2f\nr^2=%3.2f RMSE=%4.2f',mdlDeepAll.Coefficients.Estimate,r2_DeepAll,10.^mdlDeepAll.RMSE),'FontSize',14);
 cb=colorbar;cb.Ticks=0:100:500;
-cb.Label.String='Depth (m)'
+cb.Label.String='depth (m)'
 ha(2).Position=pos{2};
 
 

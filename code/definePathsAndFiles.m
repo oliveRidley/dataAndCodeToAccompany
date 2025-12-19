@@ -1,4 +1,4 @@
-HOME='/Volumes/fields/oceancolor-fields/projects/guidiForCeballos/dataAndCodeToAccompanyPaper/';
+HOME='/Volumes/fields/oceancolor-fields/projects/guidiForCeballos/gitHubVersion/dataAndCodeToAccompanyPaper/';
 CODE=[HOME,'code/'];
 DATA=[HOME,'data/'];
 
