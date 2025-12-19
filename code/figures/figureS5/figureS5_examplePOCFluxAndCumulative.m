@@ -31,6 +31,7 @@ Nprofile(:,1:2,:)=[];  % only show bands common to all
 for i=1:3
   Nprofile(:,:,i)=disappearLS(Nprofile(:,:,i));
 end
+Nprofile=movmean(Nprofile,[3,0],'omitnan');
 
 clear psd  use* binInfo station ship isRide uvpFile
 POCprofile=Nprofile.*blah;
